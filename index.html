@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Digital - Sendi Muhammad Akbar</title>
+    <style>
+        :root {
+            --merah: #FF0000;
+            --putih: #FFFFFF;
+            --abu: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--abu);
+            color: #333;
+        }
+
+        header {
+            background-color: var(--merah);
+            color: var(--putih);
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 10px solid #cc0000;
+        }
+
+        /* Foto Berbentuk Bintang */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            background-color: var(--putih);
+            margin: 0 auto 20px;
+            /* Clip-path untuk bentuk bintang */
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -30px auto 50px;
+            background: var(--putih);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 { margin: 10px 0; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--merah); border-left: 5px solid var(--merah); padding-left: 10px; margin-top: 30px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .section-content { line-height: 1.6; }
+        
+        .badge {
+            background: var(--merah);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="profile-img">
+        <img src="https://via.placeholder.com/200" alt="Foto Sendi">
+    </div>
+    <h1>Sendi Muhammad Akbar</h1>
+    <p>Semangat Kemerdekaan dalam Berkarya</p>
+</header>
+
+<div class="container">
+    
+    <section>
+        <h2>Tentang Diri</h2>
+        <p class="section-content">
+            "Saya seorang anak yang ingin membanggakan kedua orang tua."
+        </p>
+    </section>
+
+    <div class="info-grid">
+        <section>
+            <h2>Biodata</h2>
+            <p><strong>Lahir:</strong> 8 Desember 2008</p>
+            <p><strong>Telepon:</strong> 0895356163500</p>
+            <p><strong>Alamat:</strong> Kp Kaum RT 1 RW 10</p>
+            <p><strong>Hobby:</strong> Main Bola ⚽</p>
+        </section>
+
+        <section>
+            <h2>Media Sosial</h2>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/seensennnn" target="_blank" style="text-decoration: none; color: var(--merah);">@seensennnn</a></p>
+            <p><strong>Bahasa:</strong> Sunda, Indonesia</p>
+        </section>
+    </div>
+
+    <section>
+        <h2>Pendidikan & Keahlian</h2>
+        <p><span class="badge">2019</span> SD (Lulus)</p>
+        <p><span class="badge">2023</span> SMP (Lulus)</p>
+        <p><span class="badge">2026</span> SMA (Target Lulus)</p>
+    </section>
+
+    <section>
+        <h2>Pengalaman Organisasi</h2>
+        <p><strong>Karang Taruna / Organisasi Sekolah</strong><br>
+        Aktif dari masa SD, SMP, hingga SMA (Target aktif sampai 2027)</p>
+    </section>
+
+    <section>
+        <h2>Prestasi & Sertifikat</h2>
+        <ul>
+            <li>Sertifikat Turnamen Bola</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2026 Sendi Muhammad Akbar. Dibuat dengan Semangat Merah Putih.
+</footer>
+
+</body>
+  </html>

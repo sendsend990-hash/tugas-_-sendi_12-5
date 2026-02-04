@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Sendi Muhammad Akbar - Merdeka</title>
+    <title>CV Sendi Muhammad Akbar - Interactive</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f4f4; }
-        .header { background: #ce0000; color: white; text-align: center; padding: 40px 0; border-bottom: 5px solid gold; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
+        
+        .header { 
+            background: #ce0000; 
+            color: white; 
+            text-align: center; 
+            padding: 40px 0; 
+            border-bottom: 5px solid gold; 
+        }
         
         .photo-star {
             width: 180px; height: 180px;
@@ -14,39 +21,70 @@
             background: #fff;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             overflow: hidden;
-            border: 2px solid white;
         }
         .photo-star img { width: 100%; height: 100%; object-fit: cover; }
 
-        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h2 { color: #ce0000; border-left: 5px solid #ce0000; padding-left: 10px; margin-top: 30px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .container { max-width: 800px; margin: 20px auto; padding: 0 20px; }
 
-        /* Gaya Progress Bar Bahasa */
-        .skill-container { margin-bottom: 20px; }
-        .skill-label { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px; }
-        
-        .progress-bg {
-            background-color: #e0e0e0;
-            border-radius: 20px;
-            height: 15px;
-            width: 100%;
+        /* Gaya Accordion (Click to Open) */
+        .accordion-item {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #ce0000, #ff4d4d);
-            width: 0; /* Mulai dari 0 untuk animasi */
-            border-radius: 20px;
-            animation: fillProgress 2.5s ease-in-out forwards;
+        .accordion-header {
+            background: white;
+            color: #ce0000;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid #ce0000;
+            transition: background 0.3s;
         }
 
-        @keyframes fillProgress {
-            to { width: 100%; }
+        .accordion-header:hover { background: #fff5f5; }
+
+        .accordion-header::after {
+            content: '+';
+            font-size: 1.5em;
+            transition: transform 0.3s;
         }
 
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+        .active.accordion-header::after {
+            transform: rotate(45deg); /* Berubah jadi silang saat buka */
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .show {
+            max-height: 500px; /* Batas tinggi maksimal saat terbuka */
+            padding: 20px;
+        }
+
+        /* Progress Bar Bahasa */
+        .skill-container { margin-bottom: 15px; }
+        .progress-bg { background: #e0e0e0; height: 12px; border-radius: 10px; overflow: hidden; margin-top: 5px; }
+        .progress-fill { 
+            height: 100%; 
+            background: linear-gradient(90deg, #ce0000, #ff4d4d); 
+            width: 0; 
+            animation: fillProgress 2.5s ease-in-out forwards; 
+        }
+        @keyframes fillProgress { to { width: 100%; } }
+
+        footer { text-align: center; padding: 20px; color: #888; font-size: 0.9em; }
     </style>
 </head>
 <body>
@@ -56,71 +94,64 @@
         <img src="sendi-formal.jpg" alt="Foto Formal Sendi">
     </div>
     <h1>SENDI MUHAMMAD AKBAR</h1>
-    <p>Semangat Merah Putih</p>
+    <p>🇮🇩 Pemuda Kebanggaan Orang Tua</p>
 </div>
 
 <div class="container">
-    <h2>Tentang Saya</h2>
-    <p>Saya seorang anak yang ingin membanggakan kedua orang tua.</p>
+    
+    <div class="accordion-item">
+        <div class="accordion-header">Tentang Saya</div>
+        <div class="accordion-content">
+            <p>"Saya seorang anak yang ingin membanggakan kedua orang tua melalui kerja keras dan dedikasi."</p>
+        </div>
+    </div>
 
-    <div class="grid">
-        <div>
-            <h2>Biodata</h2>
+    <div class="accordion-item">
+        <div class="accordion-header">Biodata & Pendidikan</div>
+        <div class="accordion-content">
             <p><strong>Lahir:</strong> 08-12-2008</p>
             <p><strong>Hobi:</strong> Main Bola ⚽</p>
             <p><strong>Alamat:</strong> Kp Kaum RT 01 RW 10</p>
-            <p><strong>Sosmed:</strong> @seensennnn</p>
-        </div>
-        <div>
-            <h2>Pendidikan</h2>
+            <hr>
             <p><strong>SD:</strong> Lulus 2019</p>
             <p><strong>SMP:</strong> Lulus 2023</p>
             <p><strong>SMA:</strong> Lulus 2026 (Target)</p>
         </div>
     </div>
 
-    <h2>Keahlian Bahasa</h2>
-    
+    <h2 style="color: #ce0000; margin-top: 30px;">Keahlian Bahasa</h2>
     <div class="skill-container">
-        <div class="skill-label">
-            <span>Bahasa Indonesia</span>
-            <span class="percent" data-target="100">0%</span>
-        </div>
-        <div class="progress-bg">
-            <div class="progress-fill" style="animation-delay: 0.2s;"></div>
-        </div>
+        <div style="display:flex; justify-content:space-between"><span>Indonesia</span> <span>100%</span></div>
+        <div class="progress-bg"><div class="progress-fill"></div></div>
+    </div>
+    <div class="skill-container">
+        <div style="display:flex; justify-content:space-between"><span>Sunda</span> <span>100%</span></div>
+        <div class="progress-bg"><div class="progress-fill" style="animation-delay: 0.5s;"></div></div>
     </div>
 
-    <div class="skill-container">
-        <div class="skill-label">
-            <span>Bahasa Sunda</span>
-            <span class="percent" data-target="100">0%</span>
-        </div>
-        <div class="progress-bg">
-            <div class="progress-fill" style="animation-delay: 0.5s;"></div>
-        </div>
-    </div>
 </div>
 
-<script>
-    // Fungsi untuk membuat angka persen bertambah dari 0 ke 100
-    const counters = document.querySelectorAll('.percent');
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText.replace('%', '');
-            const speed = 40; // Semakin besar semakin lambat
+<footer>
+    MERDEKA! &copy; 2026 Sendi M. Akbar
+</footer>
 
-            if (count < target) {
-                counter.innerText = (count + 1) + '%';
-                setTimeout(updateCount, speed);
+<script>
+    // Script untuk Animasi Click (Accordion)
+    const accHeaders = document.querySelectorAll(".accordion-header");
+
+    accHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+            header.classList.toggle("active");
+            const content = header.nextElementSibling;
+            
+            if (content.classList.contains("show")) {
+                content.classList.remove("show");
             } else {
-                counter.innerText = target + '%';
+                content.classList.add("show");
             }
-        };
-        updateCount();
+        });
     });
 </script>
 
 </body>
-</html>
+    </html>

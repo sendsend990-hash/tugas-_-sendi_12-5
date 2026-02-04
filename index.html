@@ -3,152 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Digital - Sendi Muhammad Akbar</title>
+    <title>CV Sendi Muhammad Akbar - Merdeka</title>
     <style>
-        :root {
-            --merah: #FF0000;
-            --putih: #FFFFFF;
-            --abu: #f4f4f4;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--abu);
-            color: #333;
-        }
-
-        header {
-            background-color: var(--merah);
-            color: var(--putih);
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 10px solid #cc0000;
-        }
-
-        /* Foto Berbentuk Bintang */
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            background-color: var(--putih);
-            margin: 0 auto 20px;
-            /* Clip-path untuk bentuk bintang */
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f4f4; }
+        .header { background: #ce0000; color: white; text-align: center; padding: 40px 0; border-bottom: 5px solid gold; }
+        
+        .photo-star {
+            width: 180px; height: 180px;
+            margin: 0 auto;
+            background: #fff;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+            border: 2px solid white;
+        }
+        .photo-star img { width: 100%; height: 100%; object-fit: cover; }
+
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { color: #ce0000; border-left: 5px solid #ce0000; padding-left: 10px; margin-top: 30px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+        /* Gaya Progress Bar Bahasa */
+        .skill-container { margin-bottom: 20px; }
+        .skill-label { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px; }
+        
+        .progress-bg {
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            height: 15px;
+            width: 100%;
             overflow: hidden;
         }
 
-        .profile-img img {
-            width: 100%;
+        .progress-fill {
             height: 100%;
-            object-fit: hidden;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: -30px auto 50px;
-            background: var(--putih);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        h1 { margin: 10px 0; text-transform: uppercase; letter-spacing: 2px; }
-        h2 { color: var(--merah); border-left: 5px solid var(--merah); padding-left: 10px; margin-top: 30px; }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .section-content { line-height: 1.6; }
-        
-        .badge {
-            background: var(--merah);
-            color: white;
-            padding: 5px 12px;
+            background: linear-gradient(90deg, #ce0000, #ff4d4d);
+            width: 0; /* Mulai dari 0 untuk animasi */
             border-radius: 20px;
-            font-size: 0.9em;
-            display: inline-block;
-            margin-bottom: 5px;
+            animation: fillProgress 2.5s ease-in-out forwards;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8em;
-            color: #777;
+        @keyframes fillProgress {
+            to { width: 100%; }
         }
 
-        @media (max-width: 600px) {
-            .info-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="profile-img">
-        <img src="IMG-20260204-WA0005.jpg" alt="Foto Sendi">
+<div class="header">
+    <div class="photo-star">
+        <img src="sendi-formal.jpg" alt="Foto Formal Sendi">
     </div>
-    <h1>Sendi Muhammad Akbar</h1>
-    <p>Semangat Kemerdekaan dalam Berkarya</p>
-</header>
-
-<div class="container">
-    
-    <section>
-        <h2>Tentang Diri</h2>
-        <p class="section-content">
-            "Saya seorang anak yang ingin membanggakan kedua orang tua."
-        </p>
-    </section>
-
-    <div class="info-grid">
-        <section>
-            <h2>Biodata</h2>
-            <p><strong>Lahir:</strong> 8 Desember 2008</p>
-            <p><strong>Telepon:</strong> 0895356163500</p>
-            <p><strong>Alamat:</strong> Kp Kaum RT 1 RW 10</p>
-            <p><strong>Hobby:</strong> Main Bola ⚽</p>
-        </section>
-
-        <section>
-            <h2>Media Sosial</h2>
-            <p><strong>Instagram:</strong> <a href="https://instagram.com/seensennnn" target="_blank" style="text-decoration: none; color: var(--merah);">@seensennnn</a></p>
-            <p><strong>Bahasa:</strong> Sunda, Indonesia</p>
-        </section>
-    </div>
-
-    <section>
-        <h2>Pendidikan & Keahlian</h2>
-        <p><span class="badge">2019</span> SD (Lulus)</p>
-        <p><span class="badge">2023</span> SMP (Lulus)</p>
-        <p><span class="badge">2026</span> SMA (Target Lulus)</p>
-    </section>
-
-    <section>
-        <h2>Pengalaman Organisasi</h2>
-        <p><strong>Karang Taruna / Organisasi Sekolah</strong><br>
-        Aktif dari masa SD, SMP, hingga SMA (Target aktif sampai 2027)</p>
-    </section>
-
-    <section>
-        <h2>Prestasi & Sertifikat</h2>
-        <ul>
-            <li>Sertifikat Turnamen Bola</li>
-        </ul>
-    </section>
-
+    <h1>SENDI MUHAMMAD AKBAR</h1>
+    <p>Semangat Merah Putih</p>
 </div>
 
-<footer>
-    &copy; 2026 Sendi Muhammad Akbar. Dibuat dengan Semangat Merah Putih.
-</footer>
+<div class="container">
+    <h2>Tentang Saya</h2>
+    <p>Saya seorang anak yang ingin membanggakan kedua orang tua.</p>
+
+    <div class="grid">
+        <div>
+            <h2>Biodata</h2>
+            <p><strong>Lahir:</strong> 08-12-2008</p>
+            <p><strong>Hobi:</strong> Main Bola ⚽</p>
+            <p><strong>Alamat:</strong> Kp Kaum RT 01 RW 10</p>
+            <p><strong>Sosmed:</strong> @seensennnn</p>
+        </div>
+        <div>
+            <h2>Pendidikan</h2>
+            <p><strong>SD:</strong> Lulus 2019</p>
+            <p><strong>SMP:</strong> Lulus 2023</p>
+            <p><strong>SMA:</strong> Lulus 2026 (Target)</p>
+        </div>
+    </div>
+
+    <h2>Keahlian Bahasa</h2>
+    
+    <div class="skill-container">
+        <div class="skill-label">
+            <span>Bahasa Indonesia</span>
+            <span class="percent" data-target="100">0%</span>
+        </div>
+        <div class="progress-bg">
+            <div class="progress-fill" style="animation-delay: 0.2s;"></div>
+        </div>
+    </div>
+
+    <div class="skill-container">
+        <div class="skill-label">
+            <span>Bahasa Sunda</span>
+            <span class="percent" data-target="100">0%</span>
+        </div>
+        <div class="progress-bg">
+            <div class="progress-fill" style="animation-delay: 0.5s;"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Fungsi untuk membuat angka persen bertambah dari 0 ke 100
+    const counters = document.querySelectorAll('.percent');
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText.replace('%', '');
+            const speed = 40; // Semakin besar semakin lambat
+
+            if (count < target) {
+                counter.innerText = (count + 1) + '%';
+                setTimeout(updateCount, speed);
+            } else {
+                counter.innerText = target + '%';
+            }
+        };
+        updateCount();
+    });
+</script>
 
 </body>
-  </html>
+</html>
